@@ -27,14 +27,34 @@
  * 
  */
 
+if (isset($_GET["gnu"]) || isset($_GET["gnu-linux"])) {
+ $linux = "GNU/Linux";
+ $gnu = true;
+} else {
+ $linux = "Linux";
+ $gnu = false;
+}
+
+if (isset($_GET["not-gnu"]) || isset($_GET["!gnu"]) || $_GET["gnu"] === "0" ||
+    strtolower($_GET["gnu"]) === "false" || strtolower($_GET["gnu"]) === "no") {
+ $linux = "Linux";
+ $gnu = false;
+}
+
 if (isset($_GET["linux"]))
- $linux = true;
-else if (isset($_GET["not-linux"]) || isset($_GET["!linux"]) || $_GET["linux"] === "0" ||
-         strtolower($_GET["linux"]) === "false" || strtolower($_GET["linux"]) === "no")
- $linux = false;
+ $is_linux = true;
 else
- $linux = (stripos($_SERVER["HTTP_USER_AGENT"], "Linux") !== false ||
-           stripos($_SERVER["HTTP_USER_AGENT"], "Android") !== false);
+ $is_linux = (stripos($_SERVER["HTTP_USER_AGENT"], "Linux") !== false ||
+              (!$gnu &&stripos($_SERVER["HTTP_USER_AGENT"], "Android") !== false));
+
+if (isset($_GET["not-linux"]) || isset($_GET["!linux"]) || $_GET["linux"] === "0" ||
+    strtolower($_GET["linux"]) === "false" || strtolower($_GET["linux"]) === "no")
+ $is_linux = false;
+
+if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
+    $_GET["gnu-linux"] === "0" || strtolower($_GET["gnu-linux"]) === "false" ||
+    strtolower($_GET["gnu-linux"]) === "no")
+ $is_linux = false;
 
 ?><!DOCTYPE html>
 
@@ -71,9 +91,9 @@ else
 <?php if (isset($_GET["xp"])): ?>
   <title>Windows XP End of Service</title>
 <?php else: ?>
-  <title>Are you running Linux?</title>
+  <title>Are you running <?php echo $linux; ?>?</title>
 <?php endif ?>
-  <meta name="description" content="See if you're running Linux, the world's best operating system." />
+  <meta name="description" content="See if you're running <?php echo $linux; ?>, the world's best operating system." />
   <meta name="viewport" content="width=480; initial-scale=.75; user-scalable=no">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="html5shiv.js"></script>
@@ -91,9 +111,13 @@ else
   </script>
 <?php endif ?>
  </head>
-<?php if ($linux): ?>
+<?php if ($is_linux): ?>
  <body class="linux">
-  <header id="top"><div><div>You ARE<wbr /> running Linux!</div></div></header>
+  <header id="top">
+   <div>
+    <div>You ARE<wbr /> running <?php echo $linux; ?>!</div>
+   </div>
+  </header>
   <main id="main">
    <h1>Congratulations!  You're awesome!  :)</h1>
    <p>
@@ -103,7 +127,11 @@ else
   </main>
 <?php else: ?>
  <body class="not-linux">
-  <header id="top"><div><div>You are NOT<wbr /> running Linux!</div></div></header>
+  <header id="top">
+   <div>
+    <div>You are NOT<wbr /> running <?php echo $linux; ?>!</div>
+   </div>
+  </header>
   <main id="main">
    <h1>Let's fix that, shall we?  :)</h1>
    <section id="desktop">
@@ -124,35 +152,46 @@ else
    </section>
    <section id="mobile">
     <h2>If you are seeing this on a phone or tablet:</h2>
+<?php if ($gnu): ?>
+    <p>
+     You should buy a new one that runs
+     <a href="http://www.ubuntu.com/phone">Ubuntu</a> or
+     <a href="https://www.sailfishos.org/">Sailfish OS</a>,
+     or install one of them on your existing device if you can.
+    </p>
+<?php else: ?>
     <p>
      You should
      <a href="https://play.google.com/store/devices/">buy a new one</a>
      that runs <a href="http://www.android.com/">Android</a>.
      (Android is based on Linux.)
     </p>
+<?php endif ?>
    </section>
   </main>
   <section id="why">
-   <h1>Why use Linux?</h1>
-   <h2>Linux is more secure than other operating systems.</h2>
+   <h1>Why use <?php echo $linux; ?>?</h1>
+   <h2><?php echo $linux; ?> is more secure than other operating systems.</h2>
    <p>
-    Since Linux is open-source, anyone can examine its code and fix or
-    report any vulnerabilities they find.  This means that security problems
+    Since <?php echo $linux; ?> is open-source, anyone can examine its code and
+    fix or report any vulnerabilities they find.  This means that security problems
     get fixed quicker than in other operating systems, making it more difficult
-    for attackers to target Linux machines.
+    for attackers to target <?php echo $linux; ?> machines.
    </p>
    <p>
-    With Linux, software is installed and updated using a centralized package
-    manager.  Each distribution cryptographically signs their packages, making
-    it almost impossible for an attacker to replace the software you use with
-    malicious versions without getting caught.
+    With <?php echo $linux; ?>, software is installed and updated using a
+    centralized package manager.  Each distribution cryptographically signs
+    their packages, making it almost impossible for an attacker to replace
+    the software you use with malicious versions without getting caught.
    </p>
-   <h2>Linux respects your freedoms.</h2>
+   <h2><?php echo $linux; ?> respects your freedoms.</h2>
    <p>
-    Linux is <a href="https://gnu.org/philosophy/free-sw.html">Free Software</a>,
-    which means that it respects your freedoms to use, modify, and share it and
-    anything you create using Linux.  You are free to use Linux for any purpose,
-    commercial or otherwise, without any restrictions.
+    <?php echo $linux; ?> is
+    <a href="https://gnu.org/philosophy/free-sw.html">Free Software</a>,
+    which means that it respects your freedoms to use, modify, and share it
+    and anything you create using <?php echo $linux; ?>.  You are free to use
+    <?php echo $linux; ?> for any purpose, commercial or otherwise, without any
+    restrictions.
    </p>
   </section>
 <?php endif ?>
@@ -161,23 +200,31 @@ else
    <p>
     <a href="https://www.facebook.com/sharer/sharer.php?u=http://amirunninglinux.com/" target="_blank">Facebook</a>
     &bull;
-    <a href="https://twitter.com/intent/tweet?url=http://amirunninglinux.com/&amp;text=Are%20you%20running%20Linux%3F" target="_blank">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?url=http://amirunninglinux.com/&amp;text=Are%20you%20running%20<?php echo $linux; ?>%3F" target="_blank">Twitter</a>
     &bull;
     <a href="https://plus.google.com/share?url=http://amirunninglinux.com/" target="_blank">Google+</a>
     &bull;
-    <a href="https://pay.reddit.com/submit?url=http://amirunninglinux.com/&amp;title=Are%20you%20running%20Linux%3F" target="_blank">reddit</a>
+    <a href="https://pay.reddit.com/submit?url=http://amirunninglinux.com/&amp;title=Are%20you%20running%20<?php echo $linux; ?>%3F" target="_blank">reddit</a>
     &bull;
-    <a href="https://www.pinterest.com/pin/create/button/?url=http://amirunninglinux.com/&amp;description=Are%20you%20running%20Linux%3F" target="_blank">Pinterest</a>
+    <a href="https://www.pinterest.com/pin/create/button/?url=http://amirunninglinux.com/&amp;description=Are%20you%20running%20<?php echo $linux; ?>%3F" target="_blank">Pinterest</a>
     &bull;
     <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=http://amirunninglinux.com/" target="_blank">LinkedIn</a>
    </p>
   </section>
   <footer id="footer">
    <p>
-<?php if ($linux): ?>
-    <a href="?linux">Permalink</a> (<a href="?not-linux">non-Linux version</a>)
+<?php if ($gnu): ?>
+<?php if ($is_linux): ?>
+    <a href="?gnu-linux">Permalink</a> (<a href="?not-gnu-linux">non-<?php echo $linux; ?> version</a>)
 <?php else: ?>
-    <a href="?not-linux">Permalink</a> (<a href="?linux">Linux version</a>)
+    <a href="?not-gnu-linux">Permalink</a> (<a href="?gnu-linux"><?php echo $linux; ?> version</a>)
+<?php endif ?>
+<?php else: ?>
+<?php if ($is_linux): ?>
+    <a href="?linux">Permalink</a> (<a href="?not-linux">non-<?php echo $linux; ?> version</a>)
+<?php else: ?>
+    <a href="?not-linux">Permalink</a> (<a href="?linux"><?php echo $linux; ?> version</a>)
+<?php endif ?>
 <?php endif ?>
    </p>
    <p>
