@@ -36,7 +36,7 @@ if (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
  $gnu = false;
 }
 
-if (isset($_GET["linux"]))
+if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]))
  $is_linux = true;
 else
  $is_linux = (stripos($_SERVER["HTTP_USER_AGENT"], "Linux") !== false ||
