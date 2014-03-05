@@ -27,16 +27,11 @@
  * 
  */
 
-if (isset($_GET["gnu"]) || isset($_GET["gnu-linux"])) {
+if (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
+    stristr($_SERVER["HTTP_HOST"], "gnu")) {
  $linux = "GNU/Linux";
  $gnu = true;
 } else {
- $linux = "Linux";
- $gnu = false;
-}
-
-if (isset($_GET["not-gnu"]) || isset($_GET["!gnu"]) || $_GET["gnu"] === "0" ||
-    strtolower($_GET["gnu"]) === "false" || strtolower($_GET["gnu"]) === "no") {
  $linux = "Linux";
  $gnu = false;
 }
