@@ -78,6 +78,8 @@ else
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="html5shiv.js"></script>
   <script type="text/javascript" src="html5shiv-printshiv.js"></script>
+<?php if (preg_match('/(www\.)?(amirunninglinux\.com)(\.?)(\:[0-9]+)?$/',
+          $_SERVER["HTTP_HOST"])): ?>
   <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -87,6 +89,7 @@ else
    ga('create', 'UA-382238-14', 'amirunninglinux.com');
    ga('send', 'pageview');
   </script>
+<?php endif ?>
  </head>
 <?php if ($linux): ?>
  <body class="linux">
