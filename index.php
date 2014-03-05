@@ -31,9 +31,11 @@ if (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
     stristr($_SERVER["HTTP_HOST"], "gnu")) {
  $linux = "GNU/Linux";
  $gnu = true;
+ $url = "http://gnu.amirunninglinux.com/";
 } else {
  $linux = "Linux";
  $gnu = false;
+ $url = "http://amirunninglinux.com/";
 }
 
 if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]))
@@ -193,17 +195,17 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
   <section id="share">
    <h1>Share this site with your friends!</h1>
    <p>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=http://amirunninglinux.com/" target="_blank">Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode($url); ?>" target="_blank">Facebook</a>
     &bull;
-    <a href="https://twitter.com/intent/tweet?url=http://amirunninglinux.com/&amp;text=Are%20you%20running%20<?php echo $linux; ?>%3F" target="_blank">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode($url); ?>&amp;text=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Twitter</a>
     &bull;
-    <a href="https://plus.google.com/share?url=http://amirunninglinux.com/" target="_blank">Google+</a>
+    <a href="https://plus.google.com/share?url=<?php echo rawurlencode($url); ?>" target="_blank">Google+</a>
     &bull;
-    <a href="https://pay.reddit.com/submit?url=http://amirunninglinux.com/&amp;title=Are%20you%20running%20<?php echo $linux; ?>%3F" target="_blank">reddit</a>
+    <a href="https://pay.reddit.com/submit?url=<?php echo rawurlencode($url); ?>&amp;title=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">reddit</a>
     &bull;
-    <a href="https://www.pinterest.com/pin/create/button/?url=http://amirunninglinux.com/&amp;description=Are%20you%20running%20<?php echo $linux; ?>%3F" target="_blank">Pinterest</a>
+    <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo rawurlencode($url); ?>&amp;description=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Pinterest</a>
     &bull;
-    <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=http://amirunninglinux.com/" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?php echo rawurlencode($url); ?>" target="_blank">LinkedIn</a>
    </p>
   </section>
   <footer id="footer">
