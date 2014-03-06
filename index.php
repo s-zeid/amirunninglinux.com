@@ -42,7 +42,10 @@ if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]))
  $is_linux = true;
 else
  $is_linux = (stripos($_SERVER["HTTP_USER_AGENT"], "Linux") !== false ||
-              (!$gnu &&stripos($_SERVER["HTTP_USER_AGENT"], "Android") !== false));
+              (!$gnu && stripos($_SERVER["HTTP_USER_AGENT"], "Android") !== false));
+
+if ($gnu && stripos($_SERVER["HTTP_USER_AGENT"], "Android"))
+ $is_linux = false;
 
 if (isset($_GET["not-linux"]) || isset($_GET["!linux"]) || $_GET["linux"] === "0" ||
     strtolower($_GET["linux"]) === "false" || strtolower($_GET["linux"]) === "no")
