@@ -97,7 +97,7 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
   <title>Are you running <?php echo $linux; ?>?</title>
 <?php endif ?>
   <meta name="description" content="See if you're running <?php echo $linux; ?>, the world's best operating system." />
-  <meta name="viewport" content="width=480; initial-scale=.75; user-scalable=no">
+  <meta name="viewport" content="width=480, initial-scale=.75, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="html5shiv.js"></script>
   <script type="text/javascript" src="html5shiv-printshiv.js"></script>
