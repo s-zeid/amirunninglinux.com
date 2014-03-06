@@ -160,6 +160,6 @@ footer {
 
 @media (min-resolution: 160dpi) {
  body > header > div > div {
-  padding: 0 1em;
+  padding: 0 0.25em;
  }
 }
