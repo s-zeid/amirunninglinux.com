@@ -218,8 +218,9 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     not allow you to use their operating systems to break the law.  Now,
     this is perfectly fine when it comes to just laws (and you still have
     to follow them anyway), but you may also be subject to unjust laws,
-    like laws prohibiting protests or acts of civil disobedience, or
-    other censorship laws, that you should be able to break.
+    like laws prohibiting protests, acts of civil disobedience, or
+    criticizing the government, or other censorship laws, that you
+    should be able to break.
    </p>
    <p>
     Some operating system vendors, like Microsoft, also require you to
