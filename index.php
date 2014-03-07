@@ -200,7 +200,7 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
 <?php endif ?>
   <section id="share">
    <h1>Share this site with your friends!</h1>
-   <p>
+   <p class="faint">
     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode($url); ?>" target="_blank">Facebook</a>
     &bull;
     <a href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode($url); ?>&amp;text=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Twitter</a>
@@ -212,6 +212,16 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo rawurlencode($url); ?>&amp;description=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Pinterest</a>
     &bull;
     <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?php echo rawurlencode($url); ?>" target="_blank">LinkedIn</a>
+   </p>
+  </section>
+  <section id="app">
+   <h1>NEW!  Get the Android app!</h1>
+   <p class="faint">
+    <a href="https://play.google.com/store/apps/details?id=com.amirunninglinux">Google Play</a>
+    &bull;
+    <a href="http://code.s.zeid.me/amirunninglinux.apk/downloads">APK on Bitbucket</a>
+    &bull;
+    <a href="http://code.s.zeid.me/amirunninglinux.apk/src">Source on Bitbucket</a>
    </p>
   </section>
   <footer id="footer">

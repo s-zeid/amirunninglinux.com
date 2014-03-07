@@ -43,10 +43,6 @@ code, pre, tt {
  line-height: 1.1em;
 }
 
-.hide {
- display: none;
-}
-
 a {
  color: #a00;
  text-decoration: none;
@@ -67,6 +63,13 @@ h1:last-child, p {
 }
 p:first-child {
  margin-top: 0;
+}
+
+.faint {
+ color: #aaa;
+}
+.hide {
+ display: none;
 }
 
 body > header, body > main, body > section, body > footer {
@@ -127,10 +130,6 @@ body > main {
 }
 body > main h1 {
  margin-top: 0;
-}
-
-#share p {
- color: #aaa;
 }
 
 footer {
