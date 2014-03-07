@@ -220,6 +220,7 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?php echo rawurlencode($url); ?>" target="_blank">LinkedIn</a>
    </p>
   </section>
+<?php if (!$gnu): ?>
   <section id="app">
    <h1>NEW!  Get the Android app!</h1>
    <p class="faint">
@@ -230,6 +231,7 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     <a href="http://code.s.zeid.me/amirunninglinux.apk/src">Source on Bitbucket</a>
    </p>
   </section>
+<?php endif ?>
   <footer id="footer">
    <p>
 <?php if ($gnu): ?>
