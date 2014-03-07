@@ -202,6 +202,41 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     <?php echo $linux; ?> for any purpose, commercial or otherwise, without any
     restrictions.
    </p>
+   <p>
+    Other operating systems usually do not allow you to modify or share them,
+    or even to just look at their source code to make sure they're not doing
+    anything nasty.  Also, their vendors may restrict what you do with them,
+    e.g. how many devices you can connect to your computer (Windows and OS X),
+    whether you can run a server using your computer (Windows and OS X),
+    whether you can use your computer for commercial purposes (OS X and
+    some Windows licenses), whether you can connect to your computer
+    remotely (Windows and OS X), or whether you can run the operating
+    system on unapproved hardware (OS X).
+   </p>
+   <p>
+    Some operating system vendors, including Microsoft and Apple, do
+    not allow you to use their operating systems to break the law.  Now,
+    this is perfectly fine when it comes to just laws (and you still have
+    to follow them anyway), but you may also be subject to unjust laws,
+    like laws prohibiting protests or acts of civil disobedience, or
+    other censorship laws, that you should be able to break.
+   </p>
+   <p>
+    Some operating system vendors, like Microsoft, also require you to
+    agree to binding arbitration in order to use their operating systems.
+    This is bad for many reasons, but especially because it restricts
+    your access to the courts and your ability to participate in
+    class-action lawsuits.
+   </p>
+   <p>
+    <strong>
+     Your computer should not be able to tell you what you can and cannot
+     do.
+    </strong>
+    <br />
+    <br />
+    And if you're running <?php echo $linux; ?>, it <strong>won't</strong>.
+   </p>
   </section>
 <?php endif ?>
   <section id="share">
