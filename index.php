@@ -169,6 +169,12 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
      that runs <a href="http://www.android.com/">Android</a>.
      (Android is based on Linux.)
     </p>
+    <p>
+     You may also want to take a look at
+     <a href="https://www.mozilla.org/firefox/os/">Firefox OS</a>,
+     <a href="http://www.ubuntu.com/phone">Ubuntu</a>, or
+     <a href="https://www.sailfishos.org/">Sailfish OS</a>.
+    </p>
 <?php endif ?>
    </section>
   </main>
