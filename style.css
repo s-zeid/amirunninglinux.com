@@ -105,7 +105,7 @@ header > div > div {
  width: 100%;
  margin: 0 auto;
 }
-header > div > div wbr {
+header > div > div .status {
  display: block;
 }
 header > div:after {
@@ -173,7 +173,7 @@ footer {
  header > div > div {
   width: 100%;
  }
- header > div > div wbr {
+ header > div > div .status {
   display: inline;
  }
 }
