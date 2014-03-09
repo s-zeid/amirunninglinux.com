@@ -101,7 +101,12 @@ header > div {
  background: inherit;
 }
 header > div > div {
- padding: 2em;
+ padding: 0;
+ width: 100%;
+ margin: 0 auto;
+}
+header > div > div wbr {
+ display: block;
 }
 header > div:after {
  content: url("chevron.png");
@@ -159,29 +164,23 @@ footer {
 }
 
 @media (orientation: portrait) {
- body > header > div > div {
-  padding: 0;
+ header > div > div {
   width: 5em;
-  margin: 0 auto;
  }
 }
 
-@media (orientation: landscape) and (max-width:  768px),
-       (orientation: landscape) and (max-height: 768px) {
- body > header > div > div {
-  padding: 0 1em;
+@media (orientation: landscape) and (max-height: 360px) {
+ header > div > div {
+  width: 100%;
+ }
+ header > div > div wbr {
+  display: inline;
  }
 }
 
-@media (orientation: landscape) and (max-width:  480px),
-       (orientation: landscape) and (max-height: 480px) {
- body > header > div > div {
-  padding: 0 0.25em;
- }
-}
-
-@media (min-resolution: 160dpi) and (min-width: 640px) {
- body > header > div > div {
+@media (orientation: portrait)  and (min-resolution: 160dpi) and (min-width:  600px),
+       (orientation: landscape) and (min-resolution: 160dpi) and (min-height: 600px) {
+ header > div > div {
   font-size: 1.5em;
  }
 }

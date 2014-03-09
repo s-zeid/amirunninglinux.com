@@ -61,7 +61,11 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
 
 ?><!DOCTYPE html>
 
-<html>
+<?php if ($gnu): ?>
+<html class="gnu">
+<?php else: ?>
+<html class="non-gnu">
+<?php endif ?>
  <head>
   <meta charset="utf-8" />
   <!--
