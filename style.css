@@ -96,19 +96,17 @@ body > header {
  background: #880000 url("noise-light.png");
 }
 header > div {
- display: table-row;
- background: inherit;
-}
-header > div > div {
  display: table-cell;
- padding: 2em;
  vertical-align: middle;
  background: inherit;
 }
-header:after {
+header > div > div {
+ padding: 2em;
+}
+header > div:after {
  content: url("chevron.png");
  display: block;
- position: absolute; bottom: 0.5em;
+ position: absolute; bottom: 10%;
  width: 100%; height: auto;
  text-align: center;
  opacity: 0.5;
