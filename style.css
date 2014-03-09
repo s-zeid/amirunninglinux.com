@@ -100,11 +100,6 @@ header > div {
  vertical-align: middle;
  background: inherit;
 }
-header > div > div {
- padding: 0;
- width: 100%;
- margin: 0 auto;
-}
 header > div > div * {
  font-weight: normal;
  text-decoration: none;
@@ -170,13 +165,11 @@ footer {
 @media (orientation: portrait) {
  header > div > div {
   width: 5em;
+  margin: 0 auto;
  }
 }
 
 @media (orientation: landscape) and (max-height: 360px) {
- header > div > div {
-  width: 100%;
- }
  header > div > div .status {
   display: inline;
  }
