@@ -121,9 +121,11 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
 <?php if ($is_linux): ?>
  <body class="linux">
   <header id="top">
-   <div>
-    <div><span class="status">You ARE</span> running <?php echo $linux; ?>!</div>
-   </div>
+   <div><div>
+    <strong>
+     <u><span class="status">You ARE</span> running <?php echo $linux; ?>!</u>
+    </strong>
+   </div></div>
   </header>
   <main id="main">
    <h1>Congratulations!  You're awesome!  :)</h1>
@@ -135,9 +137,11 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
 <?php else: ?>
  <body class="not-linux">
   <header id="top">
-   <div>
-    <div><span class="status">You are NOT</span> running <?php echo $linux; ?>!</div>
-   </div>
+   <div><div>
+    <strong>
+     <u><span class="status">You are NOT</span> running <?php echo $linux; ?>!</u>
+    </strong>
+   </div></div>
   </header>
   <main id="main">
    <h1>Let's fix that, shall we?  :)</h1>

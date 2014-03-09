@@ -105,6 +105,10 @@ header > div > div {
  width: 100%;
  margin: 0 auto;
 }
+header > div > div * {
+ font-weight: normal;
+ text-decoration: none;
+}
 header > div > div .status {
  display: block;
 }
