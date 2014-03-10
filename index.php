@@ -186,6 +186,8 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
 <?php endif ?>
    </section>
   </main>
+<?php endif ?>
+<?php if ($is_linux) echo promo(); ?>
   <section id="why">
    <h1>Why use <?php echo $linux; ?>?</h1>
    <h2><?php echo $linux; ?> is more secure than other operating systems.</h2>
@@ -247,35 +249,7 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     And if you're running <?php echo $linux; ?>, it <strong>won't</strong>.
    </p>
   </section>
-<?php endif ?>
-  <section id="share">
-   <h1>Share this site with your friends!</h1>
-   <p class="faint">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode($url); ?>" target="_blank">Facebook</a>
-    &bull;
-    <a href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode($url); ?>&amp;text=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Twitter</a>
-    &bull;
-    <a href="https://plus.google.com/share?url=<?php echo rawurlencode($url); ?>" target="_blank">Google+</a>
-    &bull;
-    <a href="https://pay.reddit.com/submit?url=<?php echo rawurlencode($url); ?>&amp;title=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">reddit</a>
-    &bull;
-    <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo rawurlencode($url); ?>&amp;description=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Pinterest</a>
-    &bull;
-    <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?php echo rawurlencode($url); ?>" target="_blank">LinkedIn</a>
-   </p>
-  </section>
-<?php if (!$gnu): ?>
-  <section id="app">
-   <h1>NEW!  Get the Android app!</h1>
-   <p class="faint">
-    <a href="https://play.google.com/store/apps/details?id=com.amirunninglinux">Google Play</a>
-    &bull;
-    <a href="http://code.s.zeid.me/amirunninglinux.apk/downloads">APK on Bitbucket</a>
-    &bull;
-    <a href="http://code.s.zeid.me/amirunninglinux.apk/src">Source on Bitbucket</a>
-   </p>
-  </section>
-<?php endif ?>
+<?php if (!$is_linux) echo promo(); ?>
   <footer id="footer">
    <p>
 <?php if ($gnu): ?>
@@ -304,3 +278,37 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
   </footer>
  </body>
 </html>
+<?php
+
+function promo() { global $gnu, $is_linux, $linux; ?>
+  <section id="share">
+   <h1>Share this site with your friends!</h1>
+   <p class="faint">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode($url); ?>" target="_blank">Facebook</a>
+    &bull;
+    <a href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode($url); ?>&amp;text=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Twitter</a>
+    &bull;
+    <a href="https://plus.google.com/share?url=<?php echo rawurlencode($url); ?>" target="_blank">Google+</a>
+    &bull;
+    <a href="https://pay.reddit.com/submit?url=<?php echo rawurlencode($url); ?>&amp;title=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">reddit</a>
+    &bull;
+    <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo rawurlencode($url); ?>&amp;description=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Pinterest</a>
+    &bull;
+    <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?php echo rawurlencode($url); ?>" target="_blank">LinkedIn</a>
+   </p>
+  </section>
+<?php if (!$gnu): ?>
+  <section id="app">
+   <h1>NEW!  Get the Android app!</h1>
+   <p class="faint">
+    <a href="https://play.google.com/store/apps/details?id=com.amirunninglinux">Google Play</a>
+    &bull;
+    <a href="http://code.s.zeid.me/amirunninglinux.apk/downloads">APK on Bitbucket</a>
+    &bull;
+    <a href="http://code.s.zeid.me/amirunninglinux.apk/src">Source on Bitbucket</a>
+   </p>
+  </section>
+<?php endif ?>
+<?php }
+
+?>
