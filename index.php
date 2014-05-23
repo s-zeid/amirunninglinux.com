@@ -199,7 +199,11 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    </div></div>
   </header>
   <main id="main">
+<?php if (!$novelty): ?>
    <h1>Let's fix that, shall we?  :)</h1>
+<?php else: ?>
+   <h1>Let's switch to <?php echo $linux; ?>, shall we?  :)</h1>
+<?php endif ?>
    <section id="desktop">
     <h2>If you are seeing this on a desktop or laptop:</h2>
     <p>
