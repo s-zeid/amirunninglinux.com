@@ -131,6 +131,8 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   -->
 <?php if (isset($_GET["xp"])): ?>
   <title>Windows XP End of Service</title>
+<?php elseif ($novelty == "birthday"): ?>
+  <title>Happy birthday!</title>
 <?php else: ?>
   <title>Are you running <?php echo $linux; ?>?</title>
 <?php endif ?>
