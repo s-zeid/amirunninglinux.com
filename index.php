@@ -33,11 +33,16 @@ if (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
  $linux = "GNU/Linux";
  $gnu = true;
  $url = "http://gnu.amirunninglinux.com/";
+ $novelty = "gnu";
 } else {
  $linux = "Linux";
  $gnu = false;
  $url = "http://amirunninglinux.com/";
+ $novelty = "";
 }
+
+if (isset($_GET["birthday"]))
+ $novelty = "birthday";
 
 if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]))
  $is_linux = true;
@@ -152,7 +157,17 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <header id="top">
    <div><div>
     <strong>
-     <u><span class="status">You ARE</span> running <?php echo $linux; ?>!</u>
+     <u<?php if (isset($_GET["caps"])) echo ' style="text-transform: uppercase;"'; ?>>
+<?php if ($novelty == "birthday"): ?>
+      Happy birthday<?php if (!empty($_GET["birthday"])) echo ", {$_GET["birthday"]}"; ?>!
+      <br />
+      <br />
+      You deserve it for using <?php echo $linux; ?>, the world's BEST operating
+      system!
+<?php else: ?>
+      <span class="status">You ARE</span> running <?php echo $linux; ?>!
+<?php endif ?>
+     </u>
     </strong>
    </div></div>
   </header>
@@ -168,7 +183,16 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <header id="top">
    <div><div>
     <strong>
-     <u><span class="status">You are NOT</span> running <?php echo $linux; ?>!</u>
+     <u<?php if (isset($_GET["caps"])) echo ' style="text-transform: uppercase;"'; ?>>
+<?php if ($novelty == "birthday"): ?>
+      Happy birthday<?php if (!empty($_GET["birthday"])) echo ", {$_GET["birthday"]}"; ?>!
+      <br />
+      <br />
+      Now get a <em>REAL</em> operating system, like <?php echo $linux; ?>!
+<?php else: ?>
+      <span class="status">You are NOT</span> running <?php echo $linux; ?>!
+<?php endif ?>
+     </u>
     </strong>
    </div></div>
   </header>
