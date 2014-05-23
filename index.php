@@ -27,6 +27,7 @@
  * 
  */
 
+
 if (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
     stristr($_SERVER["HTTP_HOST"], "gnu")) {
  $linux = "GNU/Linux";
@@ -58,6 +59,31 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     $_GET["gnu-linux"] === "0" || strtolower($_GET["gnu-linux"]) === "false" ||
     strtolower($_GET["gnu-linux"]) === "no")
  $is_linux = false;
+
+// isolate extra query string parameters so they can be appended to permalink URLs
+$exclude_params = array(
+ "linux", "not-linux", "!linux",
+ "gnu-linux", "not-gnu-linux", "!gnu-linux"
+);
+$query_params = array();
+$query_params_all = array();
+
+parse_str($_SERVER["QUERY_STRING"], $query_params_all);
+foreach ($query_params_all as $k => $v) {
+ if (!in_array($k, $exclude_params))
+  $query_params[$k] = $v;
+}
+
+$query_params = http_build_query($query_params);
+$query_params_all = http_build_query($query_params_all);
+
+if (!empty($query_params))
+ $query_params = "&$query_params";
+if (!empty($query_params_all))
+ $query_params_all = "&$query_params_all";
+
+$query_params_html = htmlspecialchars($query_params);
+$query_params_all_html = htmlspecialchars($query_params_all);
 
 ?><!DOCTYPE html>
 
@@ -254,15 +280,15 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
    <p>
 <?php if ($gnu): ?>
 <?php if ($is_linux): ?>
-    <a href="?gnu-linux">Permalink</a> (<a href="?not-gnu-linux">non-<?php echo $linux; ?> version</a>)
+    <a href="?gnu-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?not-gnu-linux<?php echo $query_params_html; ?>">non-<?php echo $linux; ?> version</a>)
 <?php else: ?>
-    <a href="?not-gnu-linux">Permalink</a> (<a href="?gnu-linux"><?php echo $linux; ?> version</a>)
+    <a href="?not-gnu-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?gnu-linux<?php echo $query_params_html; ?>"><?php echo $linux; ?> version</a>)
 <?php endif ?>
 <?php else: ?>
 <?php if ($is_linux): ?>
-    <a href="?linux">Permalink</a> (<a href="?not-linux">non-<?php echo $linux; ?> version</a>)
+    <a href="?linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?not-linux<?php echo $query_params_html; ?>">non-<?php echo $linux; ?> version</a>)
 <?php else: ?>
-    <a href="?not-linux">Permalink</a> (<a href="?linux"><?php echo $linux; ?> version</a>)
+    <a href="?not-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?linux<?php echo $query_params_html; ?>"><?php echo $linux; ?> version</a>)
 <?php endif ?>
 <?php endif ?>
    </p>
