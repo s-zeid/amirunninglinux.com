@@ -161,7 +161,8 @@ $query_params_all_html = htmlspecialchars($query_params_all);
     <strong>
      <u<?php if (isset($_GET["caps"])) echo ' style="text-transform: uppercase;"'; ?>>
 <?php if ($novelty == "birthday"): ?>
-      Happy birthday<?php if (!empty($_GET["birthday"])) echo ", {$_GET["birthday"]}"; ?>!
+      Happy birthday<?php if (!empty($_GET["birthday"]))
+                           echo ", ".htmlspecialchars($_GET["birthday"]); ?>!
       <br />
       <br />
       You deserve it for using <?php echo $linux; ?>, the world's BEST operating
@@ -187,7 +188,8 @@ $query_params_all_html = htmlspecialchars($query_params_all);
     <strong>
      <u<?php if (isset($_GET["caps"])) echo ' style="text-transform: uppercase;"'; ?>>
 <?php if ($novelty == "birthday"): ?>
-      Happy birthday<?php if (!empty($_GET["birthday"])) echo ", {$_GET["birthday"]}"; ?>!
+      Happy birthday<?php if (!empty($_GET["birthday"]))
+                           echo ", ".htmlspecialchars($_GET["birthday"]); ?>!
       <br />
       <br />
       Now get a <em>REAL</em> operating system, like <?php echo $linux; ?>!
