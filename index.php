@@ -77,6 +77,9 @@ foreach ($query_params_all as $k => $v) {
 $query_params = http_build_query($query_params);
 $query_params_all = http_build_query($query_params_all);
 
+$query_params = preg_replace('/=($|&)/', '$1', $query_params);
+$query_params_all = preg_replace('/=($|&)/', '$1', $query_params_all);
+
 if (!empty($query_params))
  $query_params = "&$query_params";
 if (!empty($query_params_all))
