@@ -104,6 +104,12 @@ header > div > div * {
  font-weight: normal;
  text-decoration: none;
 }
+header > div > div br {
+ display: block;
+}
+header > div > div br + br {
+ margin-bottom: 0.5em;
+}
 header > div > div .status {
  display: block;
 }
