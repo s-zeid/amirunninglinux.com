@@ -335,7 +335,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    <p>
     Lovingly hand-crafted in <a href="http://www.vim.org/" target="_blank">Vim</a>.
    </p>
-   <p><a href="http://amirunningxp.com/" target="_blank">Inspiration</a></p>
+   <p><a href="http://web.archive.org/web/20140726223138/http://www.amirunningxp.com/" target="_blank">Inspiration</a></p>
   </footer>
  </body>
 </html>
