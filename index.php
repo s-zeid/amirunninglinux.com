@@ -178,7 +178,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    <h1>Congratulations!  You're awesome!  :)</h1>
    <p>
     Now go celebrate in
-    <a href="https://pay.reddit.com/r/LinuxCirclejerk">/r/LinuxCirclejerk</a>!
+    <a href="https://www.reddit.com/r/LinuxCirclejerk">/r/LinuxCirclejerk</a>!
    </p>
   </main>
 <?php else: ?>
@@ -351,7 +351,7 @@ function promo() { global $gnu, $is_linux, $linux; ?>
     &bull;
     <a href="https://plus.google.com/share?url=<?php echo rawurlencode($url); ?>" target="_blank">Google+</a>
     &bull;
-    <a href="https://pay.reddit.com/submit?url=<?php echo rawurlencode($url); ?>&amp;title=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">reddit</a>
+    <a href="https://www.reddit.com/submit?url=<?php echo rawurlencode($url); ?>&amp;title=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">reddit</a>
     &bull;
     <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo rawurlencode($url); ?>&amp;description=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Pinterest</a>
     &bull;
