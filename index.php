@@ -341,7 +341,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 </html>
 <?php
 
-function promo() { global $gnu, $is_linux, $linux; ?>
+function promo() { global $gnu, $is_linux, $linux, $url; ?>
   <section id="share">
    <h1>Share this site with your friends!</h1>
    <p class="faint">
