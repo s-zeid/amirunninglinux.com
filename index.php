@@ -267,7 +267,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    <h2><?php echo $linux; ?> respects your freedoms.</h2>
    <p>
     <?php echo $linux; ?> is
-    <a href="https://gnu.org/philosophy/free-sw.html">Free Software</a>,
+    <a href="https://gnu.org/philosophy/free-sw.html">free software</a>,
     which means that it respects your freedoms to use, modify, and share it
     and anything you create using <?php echo $linux; ?>.  You are free to use
     <?php echo $linux; ?> for any purpose, commercial or otherwise, without any
