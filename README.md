@@ -18,5 +18,5 @@ There's also [an Android app][amirunninglinux.apk], which obviously always
 answers yes and was intended as a joke.
 
 
-[amirunningxp]: http://web.archive.org/web/20140726223138/www.amirunningxp.com/
+[amirunningxp]: https://web.archive.org/web/20140726223138/www.amirunningxp.com/
 [amirunninglinux.apk]: http://code.s.zeid.me/amirunninglinux.apk
