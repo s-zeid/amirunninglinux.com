@@ -361,7 +361,7 @@ function promo() { global $gnu, $is_linux, $linux, $url; ?>
   </section>
 <?php if (!$gnu): ?>
   <section id="app">
-   <h1>NEW!  Get the Android app!</h1>
+   <h1>Get the Android app!</h1>
    <p class="faint">
     <a href="https://play.google.com/store/apps/details?id=com.amirunninglinux">Google Play</a>
     &bull;
