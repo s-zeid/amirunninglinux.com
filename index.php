@@ -215,7 +215,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
     </p>
     <p>
      If you prefer more of a challenge, try
-     <a href="https://fedoraproject.org/">Fedora</a>,
+     <a href="https://getfedora.org/">Fedora</a>,
      <a href="https://www.debian.org/">Debian</a>,
      <a href="https://www.archlinux.org/">Arch Linux</a>, or
      <a href="https://www.gentoo.org/">Gentoo</a>
