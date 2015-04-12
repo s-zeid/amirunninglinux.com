@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2014-2015 Scott Zeid.  <http://s.zeid.me/>
+ * Copyright (c) 2014-2015 Scott Zeid.  <https://s.zeid.me/>
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -104,7 +104,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <meta charset="utf-8" />
   <!--
    
-   Copyright (c) 2014-2015 Scott Zeid.  <http://s.zeid.me/>
+   Copyright (c) 2014-2015 Scott Zeid.  <https://s.zeid.me/>
    
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
@@ -235,7 +235,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
     <p>
      You should
      <a href="https://play.google.com/store/devices/">buy a new one</a>
-     that runs <a href="http://www.android.com/">Android</a>.
+     that runs <a href="https://www.android.com/">Android</a>.
      (Android is based on Linux.)
     </p>
     <p>
@@ -329,14 +329,14 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    </p>
    <p>
     Copyright &copy; 2014&ndash;2015
-    <a href="http://s.zeid.me/" target="_blank">Scott Zeid</a>.
+    <a href="https://s.zeid.me/" target="_blank">Scott Zeid</a>.
     <a href="http://code.s.zeid.me/amirunninglinux.com">Released</a>
     under <a href="LICENSE.txt">the X11 License</a>.
    </p>
    <p>
     Lovingly hand-crafted in <a href="http://www.vim.org/" target="_blank">Vim</a>.
    </p>
-   <p><a href="http://web.archive.org/web/20140726223138/http://www.amirunningxp.com/" target="_blank">Inspiration</a></p>
+   <p><a href="https://web.archive.org/web/20140726223138/www.amirunningxp.com/" target="_blank">Inspiration</a></p>
   </footer>
  </body>
 </html>
