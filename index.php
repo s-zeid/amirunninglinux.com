@@ -234,7 +234,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 <?php else: ?>
     <p>
      You should
-     <a href="https://play.google.com/store/devices/">buy a new one</a>
+     <a href="https://store.google.com/">buy a new one</a>
      that runs <a href="https://www.android.com/">Android</a>.
      (Android is based on Linux.)
     </p>
