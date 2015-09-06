@@ -5,7 +5,8 @@ See if you're running Linux, the world's best operating system.
 
 Copyright (c) 2014–2015 Scott Zeid.  Released under the X11 License.  
 <http://amirunninglinux.com/>  
-<http://gnu.amirunninglinux.com/>
+<http://gnu.amirunninglinux.com/>  
+[Privacy Policy](https://s.zeid.me/projects/amirunninglinux/privacy-policy/)
 
 
 This was made as a parody of [Microsoft's now-defunct Windows 8.1 marketing

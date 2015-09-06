@@ -334,6 +334,11 @@ $query_params_all_html = htmlspecialchars($query_params_all);
     under <a href="LICENSE.txt">the X11 License</a>.
    </p>
    <p>
+    <a href="https://s.zeid.me/projects/amirunninglinux/privacy-policy/">
+     Privacy Policy
+    </a>
+   </p>
+   <p>
     Lovingly hand-crafted in <a href="http://www.vim.org/" target="_blank">Vim</a>.
    </p>
    <p><a href="https://web.archive.org/web/20140726223138/www.amirunningxp.com/" target="_blank">Inspiration</a></p>
