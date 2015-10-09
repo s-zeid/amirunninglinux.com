@@ -216,7 +216,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    </div></div>
   </header>
   <main id="main">
-<?php if (!$novelty): ?>
+<?php if (!$novelty || $novelty == "gnu" || $novelty == "gnu-plus"): ?>
    <h1>Let's fix that, shall we?  :)</h1>
 <?php else: ?>
    <h1>Let's switch to <?php echo $linux; ?>, shall we?  :)</h1>
