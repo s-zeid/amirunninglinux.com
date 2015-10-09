@@ -192,6 +192,9 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <main id="main">
    <h1>Congratulations!  You're awesome!  :)</h1>
    <p>
+<?php if ($gnu_plus): ?>
+    <a href="https://rms.sexy/">Praise Stallman!</a>
+<?php endif ?>
     Now go celebrate in
     <a href="https://www.reddit.com/r/LinuxCirclejerk">/r/LinuxCirclejerk</a>!
    </p>
