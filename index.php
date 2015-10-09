@@ -28,15 +28,24 @@
  */
 
 
-if (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
-    stristr($_SERVER["HTTP_HOST"], "gnu")) {
+if (stristr($_SERVER["REQUEST_URI"], "/gnu-plus") !== false ||
+    stristr($_SERVER["HTTP_HOST"], "gnu-plus")) {
+ $linux = "GNU plus Linux";
+ $gnu = true;
+ $gnu_plus = true;
+ $url = "http://gnu-plus.amirunninglinux.com/";
+ $novelty = "gnu-plus";
+} elseif (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
+          stristr($_SERVER["HTTP_HOST"], "gnu")) {
  $linux = "GNU/Linux";
  $gnu = true;
+ $gnu_plus = false;
  $url = "http://gnu.amirunninglinux.com/";
  $novelty = "gnu";
 } else {
  $linux = "Linux";
  $gnu = false;
+ $gnu_plus = false;
  $url = "http://amirunninglinux.com/";
  $novelty = "";
 }
@@ -44,7 +53,7 @@ if (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
 if (isset($_GET["birthday"]))
  $novelty = "birthday";
 
-if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]))
+if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]) || isset($_GET["gnu-plus-linux"]))
  $is_linux = true;
 else
  $is_linux = (stripos($_SERVER["HTTP_USER_AGENT"], "Linux") !== false ||
@@ -65,10 +74,16 @@ if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
     strtolower($_GET["gnu-linux"]) === "no")
  $is_linux = false;
 
+if (isset($_GET["not-gnu-plus-linux"]) || isset($_GET["!gnu-plus-linux"]) ||
+    $_GET["gnu-plus-linux"] === "0" || strtolower($_GET["gnu-plus-linux"]) === "false" ||
+    strtolower($_GET["gnu-plus-linux"]) === "no")
+ $is_linux = false;
+
 // isolate extra query string parameters so they can be appended to permalink URLs
 $exclude_params = array(
  "linux", "not-linux", "!linux",
- "gnu-linux", "not-gnu-linux", "!gnu-linux"
+ "gnu-linux", "not-gnu-linux", "!gnu-linux",
+ "gnu-plus-linux", "not-gnu-plus-linux", "!gnu-plus-linux",
 );
 $query_params = array();
 $query_params_all = array();
@@ -313,7 +328,13 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 <?php if (!$is_linux) echo promo(); ?>
   <footer id="footer">
    <p>
-<?php if ($gnu): ?>
+<?php if ($gnu_plus): ?>
+<?php if ($is_linux): ?>
+    <a href="?gnu-plus-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?not-gnu-plus-linux<?php echo $query_params_html; ?>">non-<?php echo $linux; ?> version</a>)
+<?php else: ?>
+    <a href="?not-gnu-plus-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?gnu-plus-linux<?php echo $query_params_html; ?>"><?php echo $linux; ?> version</a>)
+<?php endif ?>
+<?php elseif ($gnu): ?>
 <?php if ($is_linux): ?>
     <a href="?gnu-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?not-gnu-linux<?php echo $query_params_html; ?>">non-<?php echo $linux; ?> version</a>)
 <?php else: ?>
