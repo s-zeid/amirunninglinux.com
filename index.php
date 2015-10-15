@@ -55,15 +55,16 @@ if (isset($_GET["birthday"]))
 
 if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]) || isset($_GET["gnu-plus-linux"]))
  $is_linux = true;
-else
+else {
  $is_linux = (stripos($_SERVER["HTTP_USER_AGENT"], "Linux") !== false ||
               (!$gnu && stripos($_SERVER["HTTP_USER_AGENT"], "Android") !== false));
-
-if ($gnu && stripos($_SERVER["HTTP_USER_AGENT"], "Android"))
- $is_linux = false;
-
-if (stripos($_SERVER["HTTP_USER_AGENT"], "CrOS"))
- $is_linux = true;
+ 
+ if ($gnu && stripos($_SERVER["HTTP_USER_AGENT"], "Android"))
+  $is_linux = false;
+ 
+ if (stripos($_SERVER["HTTP_USER_AGENT"], "CrOS"))
+  $is_linux = true;
+}
 
 if (isset($_GET["not-linux"]) || isset($_GET["!linux"]) || $_GET["linux"] === "0" ||
     strtolower($_GET["linux"]) === "false" || strtolower($_GET["linux"]) === "no")
