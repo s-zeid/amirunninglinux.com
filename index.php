@@ -53,6 +53,8 @@ if (stristr($_SERVER["REQUEST_URI"], "/gnu-plus") !== false ||
 if (isset($_GET["birthday"]))
  $novelty = "birthday";
 
+$app = (stripos($_SERVER["HTTP_USER_AGENT"], "amirunninglinux") !== false);
+
 if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]) || isset($_GET["gnu-plus-linux"]))
  $is_linux = true;
 else {
@@ -372,7 +374,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 </html>
 <?php
 
-function promo() { global $gnu, $is_linux, $linux, $url; ?>
+function promo() { global $gnu, $gnu_plus, $is_linux, $linux, $url, $app; ?>
   <section id="share">
    <h1>Share this site with your friends!</h1>
    <p class="faint">
@@ -389,7 +391,7 @@ function promo() { global $gnu, $is_linux, $linux, $url; ?>
     <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?php echo rawurlencode($url); ?>" target="_blank">LinkedIn</a>
    </p>
   </section>
-<?php if (!$gnu): ?>
+<?php if (!$gnu && !$app): ?>
   <section id="app">
    <h1>Get the Android app!</h1>
    <p class="faint">
