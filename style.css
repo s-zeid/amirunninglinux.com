@@ -159,7 +159,7 @@ footer {
   padding-top: 0;
   padding-bottom: 0.125em;
  }
- body > header:after {
+ body > header > div:after {
   content: "";
   display: none;
  }
