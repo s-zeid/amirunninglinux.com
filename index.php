@@ -357,7 +357,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    <p>
     Copyright &copy; 2014&ndash;2015
     <a href="https://s.zeid.me/" target="_blank">Scott Zeid</a>.
-    <a href="http://code.s.zeid.me/amirunninglinux.com">Released</a>
+    <a href="https://code.s.zeid.me/amirunninglinux.com">Released</a>
     under <a href="LICENSE.txt">the X11 License</a>.
    </p>
    <p>
@@ -397,9 +397,9 @@ function promo() { global $gnu, $gnu_plus, $is_linux, $linux, $url, $app; ?>
    <p class="faint">
     <a href="https://play.google.com/store/apps/details?id=com.amirunninglinux">Google Play</a>
     &bull;
-    <a href="http://code.s.zeid.me/amirunninglinux.apk/downloads">APK on Bitbucket</a>
+    <a href="https://code.s.zeid.me/amirunninglinux.apk/downloads">APK on Bitbucket</a>
     &bull;
-    <a href="http://code.s.zeid.me/amirunninglinux.apk/src">Source on Bitbucket</a>
+    <a href="https://code.s.zeid.me/amirunninglinux.apk/src">Source on Bitbucket</a>
    </p>
   </section>
 <?php endif ?>
