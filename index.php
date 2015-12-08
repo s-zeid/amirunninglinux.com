@@ -399,7 +399,7 @@ function promo() { global $gnu, $gnu_plus, $is_linux, $linux, $url, $app; ?>
     &bull;
     <a href="https://code.s.zeid.me/amirunninglinux.apk/downloads">APK on Bitbucket</a>
     &bull;
-    <a href="https://code.s.zeid.me/amirunninglinux.apk/src">Source on Bitbucket</a>
+    <a href="https://code.s.zeid.me/amirunninglinux.apk/src">Source on GitLab</a>
    </p>
   </section>
 <?php endif ?>
