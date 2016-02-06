@@ -159,7 +159,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="html5shiv.js"></script>
   <script type="text/javascript" src="html5shiv-printshiv.js"></script>
-<?php if (preg_match('/(www\.)?(gnu\.)?(amirunninglinux\.com)(\.?)(\:[0-9]+)?$/',
+<?php if (preg_match('/(^|\.)(amirunninglinux\.com)(\.?)(\:[0-9]+)?$/',
           $_SERVER["HTTP_HOST"])): ?>
   <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
