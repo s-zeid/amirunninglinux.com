@@ -3,7 +3,7 @@ amirunninglinux.com
 
 See if you're running Linux, the world's best operating system.
 
-Copyright (c) 2014–2015 Scott Zeid.  Released under the X11 License.  
+Copyright (c) 2014–2016 Scott Zeid.  Released under the X11 License.  
 <https://amirunninglinux.com/>  
 <https://gnu.amirunninglinux.com/>  
 [Privacy Policy](https://s.zeid.me/projects/amirunninglinux/privacy-policy/)

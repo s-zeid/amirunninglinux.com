@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2014-2015 Scott Zeid.  <https://s.zeid.me/>
+ * Copyright (c) 2014-2016 Scott Zeid.  <https://s.zeid.me/>
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,20 +33,20 @@ if (stristr($_SERVER["REQUEST_URI"], "/gnu-plus") !== false ||
  $linux = "GNU plus Linux";
  $gnu = true;
  $gnu_plus = true;
- $url = "http://gnu-plus.amirunninglinux.com/";
+ $url = "https://gnu-plus.amirunninglinux.com/";
  $novelty = "gnu-plus";
 } elseif (stristr($_SERVER["REQUEST_URI"], "/gnu") !== false ||
           stristr($_SERVER["HTTP_HOST"], "gnu")) {
  $linux = "GNU/Linux";
  $gnu = true;
  $gnu_plus = false;
- $url = "http://gnu.amirunninglinux.com/";
+ $url = "https://gnu.amirunninglinux.com/";
  $novelty = "gnu";
 } else {
  $linux = "Linux";
  $gnu = false;
  $gnu_plus = false;
- $url = "http://amirunninglinux.com/";
+ $url = "https://amirunninglinux.com/";
  $novelty = "";
 }
 
@@ -122,7 +122,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <meta charset="utf-8" />
   <!--
    
-   Copyright (c) 2014-2015 Scott Zeid.  <https://s.zeid.me/>
+   Copyright (c) 2014-2016 Scott Zeid.  <https://s.zeid.me/>
    
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
@@ -355,7 +355,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 <?php endif ?>
    </p>
    <p>
-    Copyright &copy; 2014&ndash;2015
+    Copyright &copy; 2014&ndash;2016
     <a href="https://s.zeid.me/" target="_blank">Scott Zeid</a>.
     <a href="https://code.s.zeid.me/amirunninglinux.com">Released</a>
     under <a href="LICENSE.txt">the X11 License</a>.
