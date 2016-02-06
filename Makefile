@@ -1,5 +1,5 @@
 HOST := amirunninglinux.com
-DIR  := ~/www/amirunninglinux.com
+DIR  := ~/srv/www/amirunninglinux.com
 
 all:
 	@echo "This Makefile is used only for deployment."
