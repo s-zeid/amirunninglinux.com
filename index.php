@@ -397,7 +397,7 @@ function promo() { global $gnu, $gnu_plus, $is_linux, $linux, $url, $app; ?>
    <p class="faint">
     <a href="https://play.google.com/store/apps/details?id=com.amirunninglinux">Google Play</a>
     &bull;
-    <a href="https://code.s.zeid.me/amirunninglinux.apk/downloads">APK on Bitbucket</a>
+    <a href="https://code.s.zeid.me/amirunninglinux.apk/tags">APK on GitLab</a>
     &bull;
     <a href="https://code.s.zeid.me/amirunninglinux.apk/src">Source on GitLab</a>
    </p>
