@@ -152,9 +152,9 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 <?php elseif ($novelty == "birthday"): ?>
   <title>Happy birthday!</title>
 <?php else: ?>
-  <title>Are you running <?php echo $linux; ?>?</title>
+  <title>Are you running <?= $linux ?>?</title>
 <?php endif ?>
-  <meta name="description" content="See if you're running <?php echo $linux; ?>, the world's best operating system." />
+  <meta name="description" content="See if you're running <?= $linux ?>, the world's best operating system." />
   <meta name="viewport" content="width=480, initial-scale=.75, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="html5shiv.js"></script>
@@ -183,10 +183,9 @@ $query_params_all_html = htmlspecialchars($query_params_all);
                            echo ", ".htmlspecialchars($_GET["birthday"]); ?>!
       <br />
       <br />
-      You deserve it for using <?php echo $linux; ?>, the world's BEST operating
-      system!
+      You deserve it for using <?= $linux ?>, the world's BEST operating system!
 <?php else: ?>
-      <span class="status">You ARE</span> running <?php echo $linux; ?>!
+      <span class="status">You ARE</span> running <?= $linux ?>!
 <?php endif ?>
      </u>
     </strong>
@@ -213,9 +212,9 @@ $query_params_all_html = htmlspecialchars($query_params_all);
                            echo ", ".htmlspecialchars($_GET["birthday"]); ?>!
       <br />
       <br />
-      Now get a <em>REAL</em> operating system, like <?php echo $linux; ?>!
+      Now get a <em>REAL</em> operating system, like <?= $linux ?>!
 <?php else: ?>
-      <span class="status">You are NOT</span> running <?php echo $linux; ?>!
+      <span class="status">You are NOT</span> running <?= $linux ?>!
 <?php endif ?>
      </u>
     </strong>
@@ -225,7 +224,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 <?php if (!$novelty || $novelty == "gnu" || $novelty == "gnu-plus"): ?>
    <h1>Let's fix that, shall we?  :)</h1>
 <?php else: ?>
-   <h1>Let's switch to <?php echo $linux; ?>, shall we?  :)</h1>
+   <h1>Let's switch to <?= $linux ?>, shall we?  :)</h1>
 <?php endif ?>
    <section id="desktop">
     <h2>If you are seeing this on a desktop or laptop:</h2>
@@ -271,27 +270,29 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 <?php endif ?>
 <?php if ($is_linux) echo promo(); ?>
   <section id="why">
-   <h1>Why use <?php echo $linux; ?>?</h1>
-   <h2><?php echo $linux; ?> is more secure than other operating systems.</h2>
+   <h1>Why use <?= $linux ?>?</h1>
+   <h2><?= $linux ?> is more secure than other operating systems.</h2>
    <p>
-    Since <?php echo $linux; ?> is open-source, anyone can examine its code and
-    fix or report any vulnerabilities they find.  This means that security problems
+
+    Since <?= $linux ?> is open-source, anyone can examine its code and fix
+    or report any vulnerabilities they find.  This means that security problems
     get fixed quicker than in other operating systems, making it more difficult
-    for attackers to target <?php echo $linux; ?> machines.
+    for attackers to target <?= $linux ?> machines.
+
    </p>
    <p>
-    With <?php echo $linux; ?>, software is installed and updated using a
-    centralized package manager.  Each distribution cryptographically signs
-    their packages, making it almost impossible for an attacker to replace
-    the software you use with malicious versions without getting caught.
+    With <?= $linux ?>, software is installed and updated using a centralized
+    package manager.  Each distribution cryptographically signs their packages,
+    making it almost impossible for an attacker to replace the software you use
+    with malicious versions without getting caught.
    </p>
-   <h2><?php echo $linux; ?> respects your freedoms.</h2>
+   <h2><?= $linux ?> respects your freedoms.</h2>
    <p>
-    <?php echo $linux; ?> is
+    <?= $linux ?> is
     <a href="https://gnu.org/philosophy/free-sw.html">free software</a>,
     which means that it respects your freedoms to use, modify, and share it
-    and anything you create using <?php echo $linux; ?>.  You are free to use
-    <?php echo $linux; ?> for any purpose, commercial or otherwise, without any
+    and anything you create using <?= $linux ?>.  You are free to use
+    <?= $linux ?> for any purpose, commercial or otherwise, without any
     restrictions.
    </p>
    <p>
@@ -328,7 +329,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
     </strong>
     <br />
     <br />
-    And if you're running <?php echo $linux; ?>, it <strong>won't</strong>.
+    And if you're running <?= $linux ?>, it <strong>won't</strong>.
    </p>
   </section>
 <?php if (!$is_linux) echo promo(); ?>
@@ -336,21 +337,21 @@ $query_params_all_html = htmlspecialchars($query_params_all);
    <p>
 <?php if ($gnu_plus): ?>
 <?php if ($is_linux): ?>
-    <a href="?gnu-plus-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?not-gnu-plus-linux<?php echo $query_params_html; ?>">non-<?php echo $linux; ?> version</a>)
+    <a href="?gnu-plus-linux<?= $query_params_html ?>">Permalink</a> (<a href="?not-gnu-plus-linux<?= $query_params_html ?>">non-<?= $linux ?> version</a>)
 <?php else: ?>
-    <a href="?not-gnu-plus-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?gnu-plus-linux<?php echo $query_params_html; ?>"><?php echo $linux; ?> version</a>)
+    <a href="?not-gnu-plus-linux<?= $query_params_html ?>">Permalink</a> (<a href="?gnu-plus-linux<?= $query_params_html ?>"><?= $linux ?> version</a>)
 <?php endif ?>
 <?php elseif ($gnu): ?>
 <?php if ($is_linux): ?>
-    <a href="?gnu-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?not-gnu-linux<?php echo $query_params_html; ?>">non-<?php echo $linux; ?> version</a>)
+    <a href="?gnu-linux<?= $query_params_html ?>">Permalink</a> (<a href="?not-gnu-linux<?= $query_params_html ?>">non-<?= $linux ?> version</a>)
 <?php else: ?>
-    <a href="?not-gnu-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?gnu-linux<?php echo $query_params_html; ?>"><?php echo $linux; ?> version</a>)
+    <a href="?not-gnu-linux<?= $query_params_html ?>">Permalink</a> (<a href="?gnu-linux<?= $query_params_html ?>"><?= $linux ?> version</a>)
 <?php endif ?>
 <?php else: ?>
 <?php if ($is_linux): ?>
-    <a href="?linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?not-linux<?php echo $query_params_html; ?>">non-<?php echo $linux; ?> version</a>)
+    <a href="?linux<?= $query_params_html ?>">Permalink</a> (<a href="?not-linux<?= $query_params_html ?>">non-<?= $linux ?> version</a>)
 <?php else: ?>
-    <a href="?not-linux<?php echo $query_params_html; ?>">Permalink</a> (<a href="?linux<?php echo $query_params_html; ?>"><?php echo $linux; ?> version</a>)
+    <a href="?not-linux<?= $query_params_html ?>">Permalink</a> (<a href="?linux<?= $query_params_html ?>"><?= $linux ?> version</a>)
 <?php endif ?>
 <?php endif ?>
    </p>
@@ -378,17 +379,17 @@ function promo() { global $gnu, $gnu_plus, $is_linux, $linux, $url, $app; ?>
   <section id="share">
    <h1>Share this site with your friends!</h1>
    <p class="faint">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode($url); ?>" target="_blank">Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?= rawurlencode($url) ?>" target="_blank">Facebook</a>
     &bull;
-    <a href="https://twitter.com/intent/tweet?url=<?php echo rawurlencode($url); ?>&amp;text=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?url=<?= rawurlencode($url) ?>&amp;text=Are%20you%20running%20<?= rawurlencode($linux) ?>%3F" target="_blank">Twitter</a>
     &bull;
-    <a href="https://plus.google.com/share?url=<?php echo rawurlencode($url); ?>" target="_blank">Google+</a>
+    <a href="https://plus.google.com/share?url=<?= rawurlencode($url) ?>" target="_blank">Google+</a>
     &bull;
-    <a href="https://www.reddit.com/submit?url=<?php echo rawurlencode($url); ?>&amp;title=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">reddit</a>
+    <a href="https://www.reddit.com/submit?url=<?= rawurlencode($url) ?>&amp;title=Are%20you%20running%20<?= rawurlencode($linux) ?>%3F" target="_blank">reddit</a>
     &bull;
-    <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo rawurlencode($url); ?>&amp;description=Are%20you%20running%20<?php echo rawurlencode($linux); ?>%3F" target="_blank">Pinterest</a>
+    <a href="https://www.pinterest.com/pin/create/button/?url=<?= rawurlencode($url) ?>&amp;description=Are%20you%20running%20<?= rawurlencode($linux) ?>%3F" target="_blank">Pinterest</a>
     &bull;
-    <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?php echo rawurlencode($url); ?>" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/cws/share?isFramed=false&amp;url=<?= rawurlencode($url) ?>" target="_blank">LinkedIn</a>
    </p>
   </section>
 <?php if (!$gnu && !$app): ?>
