@@ -367,7 +367,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
     </a>
    </p>
    <p>
-    Lovingly hand-crafted in <a href="http://www.vim.org/" target="_blank">Vim</a>.
+    Lovingly hand-crafted in <a href="https://www.vim.org/" target="_blank">Vim</a>.
    </p>
    <p><a href="https://web.archive.org/web/20140726223138/www.amirunningxp.com/" target="_blank">Inspiration</a></p>
   </footer>
