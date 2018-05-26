@@ -159,18 +159,6 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script type="text/javascript" src="html5shiv.js"></script>
   <script type="text/javascript" src="html5shiv-printshiv.js"></script>
-<?php if (preg_match('/(^|\.)(amirunninglinux\.com)(\.?)(\:[0-9]+)?$/',
-          $_SERVER["HTTP_HOST"])): ?>
-  <script type="text/javascript">
-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
- 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-   
-   ga('create', 'UA-382238-14', 'amirunninglinux.com');
-   ga('send', 'pageview');
-  </script>
-<?php endif ?>
  </head>
 <?php if ($is_linux): ?>
  <body class="linux">
