@@ -117,7 +117,8 @@ if (!empty($query_params_all))
 $query_params_html = htmlspecialchars($query_params);
 $query_params_all_html = htmlspecialchars($query_params_all);
 
-header("X-Answer: ".($is_linux ? "1" : "0"));
+$is_linux_header = ($is_linux ? "1" : "0");
+header("X-Answer: $is_linux_header");
 
 ?><!DOCTYPE html>
 
@@ -128,6 +129,7 @@ header("X-Answer: ".($is_linux ? "1" : "0"));
 <?php endif ?>
  <head>
   <meta charset="utf-8" />
+  <meta name="x-answer" content="<?= $is_linux_header ?>" />
   <!--
    
    Copyright (c) 2014-2018 Scott Zeid.  <https://s.zeid.me/>
