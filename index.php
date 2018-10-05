@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2014-2016 Scott Zeid.  <https://s.zeid.me/>
+ * Copyright (c) 2014-2018 Scott Zeid.  <https://s.zeid.me/>
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -55,7 +55,18 @@ if (isset($_GET["birthday"]))
 
 $app = (stripos($_SERVER["HTTP_USER_AGENT"], "amirunninglinux") !== false);
 
-if (isset($_GET["linux"]) || isset($_GET["gnu-linux"]) || isset($_GET["gnu-plus-linux"]))
+function get_to_bool($key) {
+ if (isset($_GET["not-$key"]) || isset($_GET["!$key"]))
+  return false;
+ if (!isset($_GET[$key]))
+  return null;
+ $value = $_GET[$key];
+ if ($value === "0" || strtolower($value) === "false" || strtolower($value) === "no")
+  return false;
+ return true;
+}
+
+if (get_to_bool("linux") || get_to_bool("gnu-linux") || get_to_bool("gnu-plus-linux"))
  $is_linux = true;
 else {
  $is_linux = (stripos($_SERVER["HTTP_USER_AGENT"], "Linux") !== false ||
@@ -68,18 +79,13 @@ else {
   $is_linux = true;
 }
 
-if (isset($_GET["not-linux"]) || isset($_GET["!linux"]) || $_GET["linux"] === "0" ||
-    strtolower($_GET["linux"]) === "false" || strtolower($_GET["linux"]) === "no")
+if (get_to_bool("linux") === false)
  $is_linux = false;
 
-if (isset($_GET["not-gnu-linux"]) || isset($_GET["!gnu-linux"]) ||
-    $_GET["gnu-linux"] === "0" || strtolower($_GET["gnu-linux"]) === "false" ||
-    strtolower($_GET["gnu-linux"]) === "no")
+if (get_to_bool("gnu-linux") === false)
  $is_linux = false;
 
-if (isset($_GET["not-gnu-plus-linux"]) || isset($_GET["!gnu-plus-linux"]) ||
-    $_GET["gnu-plus-linux"] === "0" || strtolower($_GET["gnu-plus-linux"]) === "false" ||
-    strtolower($_GET["gnu-plus-linux"]) === "no")
+if (get_to_bool("gnu-plus-linux") === false)
  $is_linux = false;
 
 // isolate extra query string parameters so they can be appended to permalink URLs
@@ -122,7 +128,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
   <meta charset="utf-8" />
   <!--
    
-   Copyright (c) 2014-2016 Scott Zeid.  <https://s.zeid.me/>
+   Copyright (c) 2014-2018 Scott Zeid.  <https://s.zeid.me/>
    
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
@@ -344,7 +350,7 @@ $query_params_all_html = htmlspecialchars($query_params_all);
 <?php endif ?>
    </p>
    <p>
-    Copyright &copy; 2014&ndash;2016
+    Copyright &copy; 2014&ndash;2018
     <a href="https://s.zeid.me/" target="_blank">Scott Zeid</a>.
     <a href="https://code.s.zeid.me/amirunninglinux.com">Released</a>
     under <a href="LICENSE.txt">the X11 License</a>.
