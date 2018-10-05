@@ -117,6 +117,8 @@ if (!empty($query_params_all))
 $query_params_html = htmlspecialchars($query_params);
 $query_params_all_html = htmlspecialchars($query_params_all);
 
+header("X-Answer: ".($is_linux ? "1" : "0"));
+
 ?><!DOCTYPE html>
 
 <?php if ($gnu): ?>
